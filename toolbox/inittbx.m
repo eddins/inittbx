@@ -40,8 +40,6 @@ function inittbx(root_name,options)
         options.ToolboxVersion    (1,1) string = "1.0.0"
     end
 
-    % https://github.com/mathworks/toolboxdesign
-
     try
         release_error = isMATLABReleaseOlderThan("R2023b");
     catch
@@ -164,7 +162,7 @@ function copyTemplateFile(template_name,output_folder,options)
         template_name (1,1) string
         output_folder (1,1) string
         options.OutputName (1,1) string = template_name
-        options.Replacements (1,1) dictionary = dictionary
+        options.Replacements (1,1) dictionary = dictionary(strings(0,1),strings(0,1))
     end
 
     full_template_path = fullfile(templateFolder,template_name + "_TEMPLATE");
@@ -174,8 +172,8 @@ function copyTemplateFile(template_name,output_folder,options)
         error(msg_id,msg);
     end
 
-    if (numEntries(options.Replacements) > 0)
-        e = entries(options.Replacements);
+    e = entries(options.Replacements);
+    if height(e) > 0
         lines = readlines(full_output_path);
         for k = 1:height(e)
             lines = replace(lines,e.Key(k),e.Value(k));

@@ -91,7 +91,25 @@ classdef inittbx_test < matlab.unittest.TestCase
                 fullfile("release","banana Toolbox.mltbx")));
         end
 
+        function rootNameNotVarname(test_case)
+            test_case.applyFixture(...
+                matlab.unittest.fixtures.WorkingFolderFixture); 
 
+            inittbx("_banana")
+
+            test_case.verifyTrue(fileExists(...
+                fullfile("_banana","toolbox","myfunction.m")));
+        end
+
+        function functionNameSpecifiedWithExtension(test_case)
+            test_case.applyFixture(...
+                matlab.unittest.fixtures.WorkingFolderFixture);  
+
+            inittbx("banana",FunctionName = "peel.m");
+
+            test_case.verifyTrue(fileExists(...
+                fullfile("banana","toolbox","peel.m")));
+        end
     end
 end
 
