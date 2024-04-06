@@ -1,0 +1,3 @@
+function B = <function_name>(A)
+    B = A;
+end
