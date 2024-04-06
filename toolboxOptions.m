@@ -61,11 +61,13 @@ function opts = toolboxOptions
     platforms.MatlabOnline = true;
     opts.SupportedPlatforms = platforms; 
 
-    % opts.Description = 
+    opts.Description = "The function inittbx creates a folder hierarchy and " + ...
+        "a basic set of files according to MATLAB Toolbox Best Practices " + ...
+        "(https://github.com/mathworks/toolboxdesign)."
 
-    % opts.Summary = 
+    opts.Summary = "Create a basic set of folders and files for a MATLAB toolbox"
 
-    % opts.AuthorName = 
+    opts.AuthorName = "Steve Eddins"
 
     % opts.AuthorEmail =
 
