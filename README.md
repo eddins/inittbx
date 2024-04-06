@@ -10,6 +10,8 @@ The function `inittbx` initializes a folder hierarchy and a basic set of files a
 - `LICENSE.md` (stub)
 - `CHECKLIST.md` with a to-do list for getting your toolbox ready to publish
 
+![](./images/inittbx-toolbox-image.jpg()
+
 ## Installation
 
 Download the `inittbx.mltbx` file from the [GitHub repository releases area](https://github.com/eddins/inittbx/releases/) or from the [File Exchange](). Double-click on the downloaded file to automatically and run the MATLAB add-on installer. This will copy the files to your MATLAB add-ons area and add `inittbx` to your MATLAB search path.

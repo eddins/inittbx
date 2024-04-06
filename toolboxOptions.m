@@ -8,7 +8,7 @@ function opts = toolboxOptions
 
     opts = matlab.addons.toolbox.ToolboxOptions(toolbox_folder,identifier);
 
-    opts.ToolboxName = "Initialize a MATLAB Toolbox";
+    opts.ToolboxName = "Initialize MATLAB Toolbox";
 
     % Version number of the toolbox. Use semantic version numbers of the
     % form MAJOR.MINOR.PATCH, such as "2.0.1". Increment the MAJOR version
@@ -63,11 +63,11 @@ function opts = toolboxOptions
 
     opts.Description = "The function inittbx creates a folder hierarchy and " + ...
         "a basic set of files according to MATLAB Toolbox Best Practices " + ...
-        "(https://github.com/mathworks/toolboxdesign)."
+        "(https://github.com/mathworks/toolboxdesign).";
 
-    opts.Summary = "Create a basic set of folders and files for a MATLAB toolbox"
+    opts.Summary = "Create a basic set of folders and files for a MATLAB toolbox";
 
-    opts.AuthorName = "Steve Eddins"
+    opts.AuthorName = "Steve Eddins";
 
     % opts.AuthorEmail =
 
@@ -75,8 +75,8 @@ function opts = toolboxOptions
 
     % Path to the toolbox image file. Can be specified as a relative or
     % absolute path.
-    %
-    % opts.ToolboxImageFile = 
+    
+    opts.ToolboxImageFile = fullfile("images","inittbx-toolbox-image.jpg");
 
     % Files to be packaged in the toolbox, string vector. By default,
     % ToolboxFiles contains the list of all files in toolboxFolder.
