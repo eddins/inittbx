@@ -10,7 +10,7 @@ The function `inittbx` initializes a folder hierarchy and a basic set of files a
 - `LICENSE.md` (stub)
 - `CHECKLIST.md` with a to-do list for getting your toolbox ready to publish
 
-![](./images/inittbx-toolbox-image.jpg()
+![](./images/inittbx-toolbox-image.jpg)
 
 ## Installation
 
