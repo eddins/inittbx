@@ -1,19 +1,104 @@
 classdef inittbx_test < matlab.unittest.TestCase
 
-    methods (TestClassSetup)
-        % Shared setup for the entire test class
-    end
-
-    methods (TestMethodSetup)
-        % Setup for each test
-    end
-
     methods (Test)
         % Test methods
 
-        function unimplementedTest(testCase)
-            testCase.verifyTrue(true,"Stub test");
-        end
-    end
+        function defaultBehavior(test_case)
+            test_case.applyFixture(...
+                matlab.unittest.fixtures.WorkingFolderFixture);
 
+            inittbx("banana");
+            
+            directories_to_check = [ ...
+                fullfile("banana","toolbox")
+                fullfile("banana","toolbox","examples")
+                fullfile("banana","tests") ];
+
+            for k = 1:length(directories_to_check)
+                d = directories_to_check(k);
+                test_case.verifyTrue(directoryExists(d),d);
+            end
+
+            files_to_check = [ ...
+                fullfile("banana","toolbox","gettingStarted.mlx")
+                fullfile("banana","README.md")
+                fullfile("banana","LICENSE.md")
+                fullfile("banana","buildfile.m")
+                fullfile("banana","packageToolbox.m")
+                fullfile("banana","toolboxOptions.m") ];
+
+            for k = 1:length(files_to_check)
+                f = files_to_check(k);
+                test_case.verifyTrue(fileExists(f),f);
+            end
+        end
+
+        function specifyOutputFolder(test_case)
+            test_case.applyFixture(...
+                matlab.unittest.fixtures.WorkingFolderFixture); 
+
+            inittbx("banana",OutputFolder = "fruit");
+
+            test_case.verifyTrue(directoryExists(...
+                fullfile("fruit","banana","toolbox")));
+        end
+
+        function specifyFunctionName(test_case)
+            test_case.applyFixture(...
+                matlab.unittest.fixtures.WorkingFolderFixture); 
+
+            inittbx("banana",FunctionName = "peel");
+
+            test_case.verifyTrue(fileExists(...
+                fullfile("banana","toolbox","peel.m")));
+        end
+
+        function specifyToolboxName(test_case)
+            test_case.applyFixture(...
+                matlab.unittest.fixtures.WorkingFolderFixture); 
+
+            expected = "Fruit Toolbox";
+            inittbx("banana",ToolboxName = expected);
+            cd("banana")
+            opts = toolboxOptions;
+            actual = opts.ToolboxName;
+
+            test_case.verifyEqual(actual,expected);
+        end
+
+        function specifyToolboxVersion(test_case)
+            test_case.applyFixture(...
+                matlab.unittest.fixtures.WorkingFolderFixture); 
+
+            expected = "3.1.4";
+            inittbx("banana",ToolboxVersion = expected);
+            cd("banana")
+            opts = toolboxOptions;
+            actual = opts.ToolboxVersion;
+
+            test_case.verifyEqual(actual,expected);            
+        end
+
+        function runBuild(test_case)
+            test_case.applyFixture(...
+                matlab.unittest.fixtures.WorkingFolderFixture); 
+
+            inittbx("banana")
+            cd banana
+            evalc("buildtool");
+
+            test_case.verifyTrue(fileExists(...
+                fullfile("release","banana Toolbox.mltbx")));
+        end
+
+
+    end
+end
+
+function tf = directoryExists(dirname)
+    tf = (exist(dirname,"dir") ~= 0);
+end
+
+function tf = fileExists(dirname)
+    tf = (exist(dirname,"file") ~= 0);
 end
