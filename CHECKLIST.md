@@ -4,8 +4,8 @@ After calling `inittbx` to initialize your toolbox folder hierarchy, you can use
 
 - [x] Initialize Git repository and commit the initial files produced by `inittbx`.
 - [x] Edit README.md. Include a brief toolbox summary, installation instructions, and a pointer to gettingStarted.mlx. Optionally, follow with information for toolbox collaborators.
-- [ ] Edit LICENSE.md. The license file helps everyone understand how to use, change, and distribute the toolbox. If you do not provide a license, then normal copyright rules will prohibit others from copying, distributing, or modifying your work. If you accept repository contributions from others, then your own use of the repository may also become restricted.[^1] Avoid writing your own license text. It is better to choose an existing license that meets your needs. See https://choosealicense.com for help choosing a license.
-- [ ] Review and revise the options in toolboxOptions.m, especially `ToolboxName` and `ToolboxVersion`.
+- [x] Edit LICENSE.md. The license file helps everyone understand how to use, change, and distribute the toolbox. If you do not provide a license, then normal copyright rules will prohibit others from copying, distributing, or modifying your work. If you accept repository contributions from others, then your own use of the repository may also become restricted.[^1] Avoid writing your own license text. It is better to choose an existing license that meets your needs. See https://choosealicense.com for help choosing a license.
+- [x] Review and revise the options in toolboxOptions.m, especially `ToolboxName` and `ToolboxVersion`.
 - [ ] Replace the stub code in the `toolbox` folder with your own.
 - [ ] Revise the test file in `tests` to test your own code.
 - [ ] Revise `gettingStarted.mlx`. This file introduces your toolbox and illustrates the primary workflows. It should link to any examples that you create.

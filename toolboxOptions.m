@@ -8,7 +8,7 @@ function opts = toolboxOptions
 
     opts = matlab.addons.toolbox.ToolboxOptions(toolbox_folder,identifier);
 
-    opts.ToolboxName = "Initialize Toolbox";
+    opts.ToolboxName = "Initialize a MATLAB Toolbox";
 
     % Version number of the toolbox. Use semantic version numbers of the
     % form MAJOR.MINOR.PATCH, such as "2.0.1". Increment the MAJOR version
@@ -37,7 +37,7 @@ function opts = toolboxOptions
     % .mltbx extension, MATLAB appends the extension automatically when it
     % creates the file.
 
-    opts.OutputFile = fullfile("release","croparray");
+    opts.OutputFile = fullfile("release","inittbx");
     
     % Latest MATLAB release that the toolbox is compatible with, specified
     % as a string using the format RXXXXx, for example, "R2023a". If there
@@ -51,7 +51,7 @@ function opts = toolboxOptions
     % If there is no minimum restriction, specify MinimumMatlabRelease as
     % empty ("").
 
-    opts.MinimumMatlabRelease = "";
+    opts.MinimumMatlabRelease = "R2023b";
 
     % Supported platforms
 
