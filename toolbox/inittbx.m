@@ -102,9 +102,9 @@ function inittbx(root_name,options)
 end
 
 function makeFolder(folder_path)
-    [status,~,msg_id] = mkdir(folder_path);
+    [status,msg,msg_id] = mkdir(folder_path);
     if (status == 0)
-        error(msg_id);
+        error(msg_id,msg);
     end
 end
 
@@ -135,9 +135,9 @@ function copyTemplateFile(template_name,output_folder,options)
 
     full_template_path = fullfile(templateFolder,template_name + "_TEMPLATE");
     full_output_path = fullfile(output_folder,options.OutputName);
-    [status,~,msg_id] = copyfile(full_template_path,full_output_path);
+    [status,msg,msg_id] = copyfile(full_template_path,full_output_path);
     if (status == 0)
-        error(msg_id);
+        error(msg_id,msg);
     end
 
     if (numEntries(options.Replacements) > 0)
