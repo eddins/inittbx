@@ -9,6 +9,16 @@ function inittbx(root_name,options)
 
     % https://github.com/mathworks/toolboxdesign
 
+    try
+        release_error = isMATLABReleaseOlderThan("R2023b");
+    catch
+        release_error = true;
+    end
+    if release_error
+        error("inittbx:UnsupportedRelease", ...
+            "MATLAB release R2023b or later is required.")
+    end    
+
     % Initialize folder structure
     %
     %    root/
