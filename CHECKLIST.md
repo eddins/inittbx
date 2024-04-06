@@ -10,7 +10,7 @@ After calling `inittbx` to initialize your toolbox folder hierarchy, you can use
 - [x] Revise the test file in `tests` to test your own code.
 - [x] Revise `gettingStarted.mlx`. This file introduces your toolbox and illustrates the primary workflows. It should link to any examples that you create.
 - [x] Add one or more example files to the `toolbox/examples` folder.
-- [ ] Add an "Open in MATLAB Online" badge using [this tool](https://www.mathworks.com/products/matlab-online/git.html)
+- [x] Add an "Open in MATLAB Online" badge using [this tool](https://www.mathworks.com/products/matlab-online/git.html)
 - [ ] If your GitHub repository has been linked to a MATLAB Central File Exchange submission, then add a File Exchange badge to your README.md. See the instructions at the top of your GitHub-linked File Exchange submission.
 
 [^1]: ["No License"](https://choosealicense.com/no-permission/)
