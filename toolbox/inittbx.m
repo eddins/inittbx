@@ -1,3 +1,34 @@
+%INITTBX Initialize a MATLAB toolbox
+%   INITTBX(root_name) initialized a basic folder hierarchy and set of
+%   files for a MATLAB toolbox. The folder hierarchy is created in a
+%   subfolder of the working folder with the specified name.
+%
+%   NAMED ARGUMENTS
+%
+%     OutputFolder   Folder containing the new folder hierarchy. Defaults
+%                    to the current working folder.
+%
+%     FunctionName   Name of the stub MATLAB code file created in the
+%                    toolbox subfolder of the hierarchy. Defaults to
+%                    "myfunc". 
+%
+%     ToolboxName    Name of the toolbox. Defaults to "<root_name>
+%                    Toolbox". 
+%
+%     ToolboxVersion Semantic version of the toolbox. Defaults to "1.0.0".
+%
+%   EXAMPLE
+%
+%     Create a MATLAB toolbox folder hierarchy named "banana" and then run
+%     buildtool to check for code issues, run tests, and package the
+%     toolbox.
+%
+%       inittbx("banana", ToolboxName = "Fruit Toolbox")
+%       cd banana
+%       buildtool
+%
+% See also BUILDTOOL
+
 function inittbx(root_name,options)
     arguments
         root_name                 (1,1) string
