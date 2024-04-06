@@ -1,6 +1,6 @@
-# Initialize a MATLAB Toolbox
+[![View Initialize a MATLAB Toolbox on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/162796-initialize-a-matlab-toolbox) [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=eddins/inittbx&file=toolbox/gettingStarted.mlx)
 
-[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=eddins/inittbx&file=toolbox/gettingStarted.mlx)
+# Initialize a MATLAB Toolbox
 
 The function `inittbx` initializes a folder hierarchy and a basic set of files according to [*MATLAB Toolbox Best Practices*](https://github.com/mathworks/toolboxdesign) by [rpurser47](https://github.com/rpurser47) and others. The resulting hierarchy contains:
 
