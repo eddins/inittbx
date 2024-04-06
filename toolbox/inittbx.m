@@ -1,7 +1,9 @@
 %INITTBX Initialize a MATLAB toolbox
 %   INITTBX(root_name) initialized a basic folder hierarchy and set of
-%   files for a MATLAB toolbox. The folder hierarchy is created in a
-%   subfolder of the working folder with the specified name.
+%   files for a MATLAB toolbox, based on the recommendations in MATLAB
+%   Toolbox Best Practices (https://github.com/mathworks/toolboxdesign).
+%   The folder hierarchy is created in a subfolder of the working folder
+%   with the specified name.
 %
 %   NAMED ARGUMENTS
 %
