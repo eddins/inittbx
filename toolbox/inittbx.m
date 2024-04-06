@@ -34,7 +34,7 @@ function inittbx(root_name,options)
         root_name                 (1,1) string
         options.OutputFolder      (1,1) string = pwd
         options.FunctionName      (1,1) string = defaultFunctionName(root_name)
-        options.ToolboxName       (1,1) string = "root_name Toolbox"
+        options.ToolboxName       (1,1) string = root_name + " Toolbox"
         options.ToolboxVersion    (1,1) string = "1.0.0"
     end
 
@@ -86,6 +86,7 @@ function inittbx(root_name,options)
     copyTemplateFile("toolboxOptions.m",root_folder,...
         Replacements = dictionary( ...
         "<toolbox_name>",    options.ToolboxName, ...
+        "<toolbox_package_name>", options.ToolboxName, ...
         "<toolbox_version>", options.ToolboxVersion, ...
         "<toolbox_identifier>", matlab.lang.internal.uuid));
     copyTemplateFile("packageToolbox.m",root_folder);
